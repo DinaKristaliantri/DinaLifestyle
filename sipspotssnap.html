@@ -1,289 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cafe Checklist</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Cafe list</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* Navbar styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1e3a8a; /* Warna latar belakang navbar */
-  padding: 10px 20px; /* Padding dalam navbar */
-  color: white; /* Warna teks */
-}
+    body {
+      background-color: #696969;
+    }
 
-.navbar-brand {
-  list-style: none; /* Menghapus bullet dari daftar */
-  display: flex; /* Flexbox untuk item di sebelah kiri */
-}
+    .intro {
+      text-align: center;
+      margin: 20px 0;
+    }
 
-.navbar-menu {
-  list-style: none; /* Menghapus bullet dari daftar */
-  display: flex; /* Flexbox untuk item di sebelah kanan */
-  gap: 15px; /* Jarak antara item */
-}
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
 
-.navbar-menu a {
-  color: white; /* Warna tautan */
-  text-decoration: none; /* Menghapus garis bawah */
-  transition: color 0.3s; /* Transisi halus untuk warna */
-}
+    .feature-box {
+      background-color: #1e3a8a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      width: 100%;
+      max-width: 200px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
 
-.navbar-menu a:hover {
-  color: #e2e6ea; /* Warna tautan saat hover */
-}
-body {
-  background-color: #696969; /* Light gray color */
-}
-nav {
-  background-color:  #1e3a8a; /* Dark blue for navbar */
-  padding: 1rem;
-}
-nav a {
-  color: white; /* White text for navbar links */
-  margin: 0 15px;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #e2e6ea; /* Light color on hover */
-}
-.tab-content {
-  margin-top: 20px; /* Spacing above tab content */
-}
-.card {
-  transition: transform 0.3s;
-}
-.card-body {
-    padding: 1rem; /* Adjust padding as needed */
-}
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-}
-h1, h3 {
-  color: black /* Consistent heading color */
-}
+    .feature-box:hover {
+      background-color: #e2e6ea;
+      transform: translateY(-5px);
+    }
+
+    .btn-custom {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #1e3a8a;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    .btn-custom:hover {
+      background-color: #1e40af;
+    }
+
+    .grid-scroll {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .grid-scroll article {
+      min-width: 280px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background-color: #1e3a8a;
+      color: white;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .grid-scroll article:hover {
+      transform: translateY(-5px);
+    }
+
+    .responsive-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-scroll {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .grid-scroll article {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- Navbar -->
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>Scena CuLture</strong></li>
-    </ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="sipspotssnap.html">Sip Spots & Snap</a></li>
-      <li><a href="#">Masterclasses</a></li>
-      <li><a href="#" role="button">Subscribe</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1e3a8a;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><strong>Skena CuLture</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="sipspotssnap.html">Sip Spots & Snap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Masterclasses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" role="button">Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
+  <!-- Main content -->
   <div class="container my-5">
-    <h1 class="text-center">CHECK LIST OF CAFE</h1>
-    
+    <h1 class="text-center">LIST OF CAFE</h1>
+
     <!-- Tabs for Locations -->
     <ul class="nav nav-tabs" id="locationTabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="jakpus-tab" data-bs-toggle="tab" data-bs-target="#jakpus" type="button" role="tab" aria-controls="jakpus" aria-selected="true">Jakpus</button>
+        <button class="nav-link active" id="jakpus-tab" data-bs-toggle="tab" data-bs-target="#jakpus" type="button"
+          role="tab" aria-controls="jakpus" aria-selected="true">Jakpus</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="jaksel-tab" data-bs-toggle="tab" data-bs-target="#jaksel" type="button" role="tab" aria-controls="jaksel" aria-selected="false">Jaksel</button>
+        <button class="nav-link" id="jaksel-tab" data-bs-toggle="tab" data-bs-target="#jaksel" type="button" role="tab"
+          aria-controls="jaksel" aria-selected="false">Jaksel</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="jaktim-tab" data-bs-toggle="tab" data-bs-target="#jaktim" type="button" role="tab" aria-controls="jaktim" aria-selected="false">Jaktim</button>
+        <button class="nav-link" id="jaktim-tab" data-bs-toggle="tab" data-bs-target="#jaktim" type="button" role="tab"
+          aria-controls="jaktim" aria-selected="false">Jaktim</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="jakbar-tab" data-bs-toggle="tab" data-bs-target="#jakbar" type="button" role="tab" aria-controls="jakbar" aria-selected="false">Jakbar</button>
+        <button class="nav-link" id="jakbar-tab" data-bs-toggle="tab" data-bs-target="#jakbar" type="button" role="tab"
+          aria-controls="jakbar" aria-selected="false">Jakbar</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="jakut-tab" data-bs-toggle="tab" data-bs-target="#jakut" type="button" role="tab" aria-controls="jakut" aria-selected="false">Jakut</button>
+        <button class="nav-link" id="jakut-tab" data-bs-toggle="tab" data-bs-target="#jakut" type="button" role="tab"
+          aria-controls="jakut" aria-selected="false">Jakut</button>
       </li>
     </ul>
 
     <!-- Tab Content -->
-<div class="tab-pane fade show active" id="jakpus" role="tabpanel" aria-labelledby="jakpus-tab">
-    <h3 class="my-4 text-center">Jakarta Pusat</h3>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
-                <img src="assets/jakpusanomali.jpg" class="card-img-top" alt="Anomali Coffee Menteng">
-                <div class="card-body">
-                    <h5 class="card-title">Anomali Coffee Menteng</h5>
-                    <p class="card-text">Jl. Teuku Cik Ditiro No.52</p>
-                </div>
+    <div class="tab-content">
+      <!-- Jakarta Pusat Content -->
+      <div class="tab-pane fade show active" id="jakpus" role="tabpanel" aria-labelledby="jakpus-tab">
+        <h3 class="my-4 text-center">Jakarta Pusat</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="assets/jakpusanomali.jpg" class="card-img-top" alt="Anomali Coffee Menteng">
+              <div class="card-body">
+                <h5 class="card-title">Anomali Coffee Menteng</h5>
+                <p class="card-text">Jl. Teuku Cik Ditiro No.52</p>
+              </div>
             </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
-                <img src="assets/jakpusnako.jpeg" class="card-img-top" alt="Nako">
-                <div class="card-body">
-                    <h5 class="card-title">Kopi Nako Monas</h5>
-                    <p class="card-text">Jl. Abdul Muis No. 20, Tanah Abang, Jakarta Pusat</p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="assets/jakpusnako.jpeg" class="card-img-top" alt="Nako">
+              <div class="card-body">
+                <h5 class="card-title">Kopi Nako Monas</h5>
+                <p class="card-text">Jl. Abdul Muis No. 20, Tanah Abang, Jakarta Pusat</p>
+              </div>
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
-                <img src="assets/jakpusmattea.jpeg" class="card-img-top" alt="Mattea">
-                <div class="card-body">
-                    <h5 class="card-title">Mattea Social Space</h5>
-                    <p class="card-text">Jl. Cempaka Putih Barat No. 35</p>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="assets/jakpusmattea.jpeg" class="card-img-top" alt="Mattea">
+              <div class="card-body">
+                <h5 class="card-title">Mattea Social Space</h5>
+                <p class="card-text">Jl. Cempaka Putih Barat No. 35</p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-
- <!-- Jakarta Selatan Content -->
-      <div class="tab-pane fade" id="jaksel" role="tabpanel" aria-labelledby="jaksel-tab">
+      <!-- Jakarta Selatan Content -->
+      <div class="tab-pane fade show active" id="jaksel" role="tabpanel" aria-labelledby="jaksel-tab">
         <h3 class="my-4 text-center">Jakarta Selatan</h3>
         <div class="row">
-          <!-- List of cafes for Jakarta Selatan -->
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1">
+              <img src="assets/jakselkopitagram.jpg" class="card-img-top" alt="kopitagram">
               <div class="card-body">
-                <h5 class="card-title">Cafe 1</h5>
-                <p class="card-text">Jl. Example Address 1</p>
+                <h5 class="card-title">kopitagram Centang Biru</h5>
+                <p class="card-text">Jl. Karet Sawah, Karet Kuningan, Setiabudi</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2">
+              <img src="assets/jakselstuja1.jpeg" class="card-img-top" alt="stuja">
               <div class="card-body">
-                <h5 class="card-title">Cafe 2</h5>
-                <p class="card-text">Jl. Example Address 2</p>
+                <h5 class="card-title">STUJA Coffe</h5>
+                <p class="card-text"> Jl. Cipete Raya No. 18 - 19, Fatmawati</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3">
+              <img src="assets/jakselfilsof.jpg" class="card-img-top" alt="filsof">
               <div class="card-body">
-                <h5 class="card-title">Cafe 3</h5>
-                <p class="card-text">Jl. Example Address 3</p>
+                <h5 class="card-title">Filosofi Kopi Perfecto</h5>
+                <p class="card-text">Jl. Barito I No. 21, Blok M, Kebayoran Baru</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
- <!-- Jakarta Timur Content -->
-      <div class="tab-pane fade" id="jaktim" role="tabpanel" aria-labelledby="jaktim-tab">
+      
+            <!-- Jakarta Timur Content -->
+      <div class="tab-pane fade show active" id="jaktim" role="tabpanel" aria-labelledby="jaktim-tab">
         <h3 class="my-4 text-center">Jakarta Timur</h3>
         <div class="row">
-          <!-- List of cafes for Jakarta Timur -->
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jaktim">
+              <img src="assets/jaktimsuduttimur.jpg" class="card-img-top" alt="suduttimur">
               <div class="card-body">
-                <h5 class="card-title">Cafe 1 Jaktim</h5>
-                <p class="card-text">Jl. Example Address 1, Jakarta Timur</p>
+                <h5 class="card-title">Sudut Timur Coffee & Eatery</h5>
+                <p class="card-text">Jl. Eretan II No. 101, Kramat Jati</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jaktim">
+              <img src="assets/jaktimupala.jpeg" class="card-img-top" alt="Upala">
               <div class="card-body">
-                <h5 class="card-title">Cafe 2 Jaktim</h5>
-                <p class="card-text">Jl. Example Address 2, Jakarta Timur</p>
+                <h5 class="card-title">Upala Coffee & Eatery</h5>
+                <p class="card-text">Jl. Kayu Putih Tengah IC No. 42, Pulo Gadung</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jaktim">
+              <img src="assets/jaktimtuantanah.jpeg" class="card-img-top" alt="tuantanah">
               <div class="card-body">
-                <h5 class="card-title">Cafe 3 Jaktim</h5>
-                <p class="card-text">Jl. Example Address 3, Jakarta Timur</p>
+                <h5 class="card-title">Tuan Tanah Coffee Shop</h5>
+                <p class="card-text">Jl. Pahlawan Revolusi no. 8</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-<!-- Jakarta Barat Content -->
-      <div class="tab-pane fade" id="jakbar" role="tabpanel" aria-labelledby="jakbar-tab">
+                  <!-- Jakarta Barat Content -->
+      <div class="tab-pane fade show active" id="jakbar" role="tabpanel" aria-labelledby="jakbar-tab">
         <h3 class="my-4 text-center">Jakarta Barat</h3>
         <div class="row">
-          <!-- List of cafes for Jakarta Barat -->
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jakbar">
+              <img src="assets/jakbarbeer.jpeg" class="card-img-top" alt="beer">
               <div class="card-body">
-                <h5 class="card-title">Cafe 1 Jakbar</h5>
-                <p class="card-text">Jl. Example Address 1, Jakarta Barat</p>
+                <h5 class="card-title">Bear-Sama Pool & Cafe</h5>
+                <p class="card-text">Jl. Kembang Kerep No.25, RW.2, Meruya Utara, Kec. Kembangan</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jakbar">
+              <img src="assets/jakbarkopidia.jpeg" class="card-img-top" alt="dia">
               <div class="card-body">
-                <h5 class="card-title">Cafe 2 Jakbar</h5>
-                <p class="card-text">Jl. Example Address 2, Jakarta Barat</p>
+                <h5 class="card-title">Coffee Dia</h5>
+                <p class="card-text"> Jl. Tanjung Duren Utara V No.246, RT.6/RW.3, Tj. Duren Utara</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jakbar">
+              <img src="assets/jakbarupstairs.jpeg" class="card-img-top" alt="upstairs">
               <div class="card-body">
-                <h5 class="card-title">Cafe 3 Jakbar</h5>
-                <p class="card-text">Jl. Example Address 3, Jakarta Barat</p>
+                <h5 class="card-title">Upstairs Coffee Signature</h5>
+                <p class="card-text">Jl. Kembang Kerep No.21, RT.4/RW.2, Meruya Utara, Kec. Kembangan</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Jakarta Utara Content -->
-      <div class="tab-pane fade" id="jakut" role="tabpanel" aria-labelledby="jakut-tab">
+                        <!-- Jakarta Utara Content -->
+      <div class="tab-pane fade show active" id="jakut" role="tabpanel" aria-labelledby="jakut-tab">
         <h3 class="my-4 text-center">Jakarta Utara</h3>
         <div class="row">
-          <!-- List of cafes for Jakarta Utara -->
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jakut">
+              <img src="assets/jakutnarasi.jpg" class="card-img-top" alt="narasi">
               <div class="card-body">
-                <h5 class="card-title">Cafe 1 Jakut</h5>
-                <p class="card-text">Jl. Example Address 1, Jakarta Utara</p>
+                <h5 class="card-title">Narasi Coffee</h5>
+                <p class="card-text">Jl. Danau Agung II No. 28, Sunter</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jakut">
+              <img src="assets/jakutlibero.jpeg" class="card-img-top" alt="libero">
               <div class="card-body">
-                <h5 class="card-title">Cafe 2 Jakut</h5>
-                <p class="card-text">Jl. Example Address 2, Jakarta Utara</p>
+                <h5 class="card-title">Libero Coffe</h5>
+                <p class="card-text">Jl. Danau Sunter, No 17A</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card mb-4 text-center">
-              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jakut">
+              <img src="assets/jakutlucup.jpeg" class="card-img-top" alt="lucup">
               <div class="card-body">
-                <h5 class="card-title">Cafe 3 Jakut</h5>
-                <p class="card-text">Jl. Example Address 3, Jakarta Utara</p>
+                <h5 class="card-title">LUC UP</h5>
+                <p class="card-text">Jl. Danau Sunter Selatan No.8 Kav. Nomor 22 B, Sunter Agung</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+ <footer class="text-white py-4 mt-3" style="background-color: #1e3a8a;">
+    <div class="container">
+      <!-- Footer Links -->
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <h5>About Scena Culture</h5>
+          <p>Scena Culture brings together a community of coffee and lifestyle enthusiasts. Join us for insights,
+            stories, and experiences that inspire.</p>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5>Explore</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="sipspotssnap.html" class="text-white">Sip Spots & Snap</a></li>
+            <li><a href="masterclass.html" class="text-white">Masterclasses</a></li>
+            <li><a href="#" class="text-white">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5>Support</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Help Center</a></li>
+            <li><a href="#" class="text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-white">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h5>Follow Us</h5>
+          <a href="https://id-id.facebook.com/" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <hr class="text-white" />
+      <!-- Copyright -->
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Scena Culture. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
