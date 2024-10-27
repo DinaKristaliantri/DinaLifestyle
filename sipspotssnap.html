@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Checklist</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3a8a; /* Warna latar belakang navbar */
+  padding: 10px 20px; /* Padding dalam navbar */
+  color: white; /* Warna teks */
+}
+
+.navbar-brand {
+  list-style: none; /* Menghapus bullet dari daftar */
+  display: flex; /* Flexbox untuk item di sebelah kiri */
+}
+
+.navbar-menu {
+  list-style: none; /* Menghapus bullet dari daftar */
+  display: flex; /* Flexbox untuk item di sebelah kanan */
+  gap: 15px; /* Jarak antara item */
+}
+
+.navbar-menu a {
+  color: white; /* Warna tautan */
+  text-decoration: none; /* Menghapus garis bawah */
+  transition: color 0.3s; /* Transisi halus untuk warna */
+}
+
+.navbar-menu a:hover {
+  color: #e2e6ea; /* Warna tautan saat hover */
+}
+body {
+  background-color: #696969; /* Light gray color */
+}
+nav {
+  background-color:  #1e3a8a; /* Dark blue for navbar */
+  padding: 1rem;
+}
+nav a {
+  color: white; /* White text for navbar links */
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #e2e6ea; /* Light color on hover */
+}
+.tab-content {
+  margin-top: 20px; /* Spacing above tab content */
+}
+.card {
+  transition: transform 0.3s;
+}
+.card-body {
+    padding: 1rem; /* Adjust padding as needed */
+}
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+h1, h3 {
+  color: black /* Consistent heading color */
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>Scena CuLture</strong></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sipspotssnap.html">Sip Spots & Snap</a></li>
+      <li><a href="#">Masterclasses</a></li>
+      <li><a href="#" role="button">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <div class="container my-5">
+    <h1 class="text-center">CHECK LIST OF CAFE</h1>
+    
+    <!-- Tabs for Locations -->
+    <ul class="nav nav-tabs" id="locationTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="jakpus-tab" data-bs-toggle="tab" data-bs-target="#jakpus" type="button" role="tab" aria-controls="jakpus" aria-selected="true">Jakpus</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jaksel-tab" data-bs-toggle="tab" data-bs-target="#jaksel" type="button" role="tab" aria-controls="jaksel" aria-selected="false">Jaksel</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jaktim-tab" data-bs-toggle="tab" data-bs-target="#jaktim" type="button" role="tab" aria-controls="jaktim" aria-selected="false">Jaktim</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jakbar-tab" data-bs-toggle="tab" data-bs-target="#jakbar" type="button" role="tab" aria-controls="jakbar" aria-selected="false">Jakbar</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jakut-tab" data-bs-toggle="tab" data-bs-target="#jakut" type="button" role="tab" aria-controls="jakut" aria-selected="false">Jakut</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+<div class="tab-pane fade show active" id="jakpus" role="tabpanel" aria-labelledby="jakpus-tab">
+    <h3 class="my-4 text-center">Jakarta Pusat</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
+                <img src="assets/jakpusanomali.jpg" class="card-img-top" alt="Anomali Coffee Menteng">
+                <div class="card-body">
+                    <h5 class="card-title">Anomali Coffee Menteng</h5>
+                    <p class="card-text">Jl. Teuku Cik Ditiro No.52</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
+                <img src="assets/jakpusnako.jpeg" class="card-img-top" alt="Nako">
+                <div class="card-body">
+                    <h5 class="card-title">Kopi Nako Monas</h5>
+                    <p class="card-text">Jl. Abdul Muis No. 20, Tanah Abang, Jakarta Pusat</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 text-center"> <!-- Added text-center for center alignment -->
+                <img src="assets/jakpusmattea.jpeg" class="card-img-top" alt="Mattea">
+                <div class="card-body">
+                    <h5 class="card-title">Mattea Social Space</h5>
+                    <p class="card-text">Jl. Cempaka Putih Barat No. 35</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Jakarta Selatan Content -->
+      <div class="tab-pane fade" id="jaksel" role="tabpanel" aria-labelledby="jaksel-tab">
+        <h3 class="my-4 text-center">Jakarta Selatan</h3>
+        <div class="row">
+          <!-- List of cafes for Jakarta Selatan -->
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 1</h5>
+                <p class="card-text">Jl. Example Address 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 2</h5>
+                <p class="card-text">Jl. Example Address 2</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 3</h5>
+                <p class="card-text">Jl. Example Address 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ <!-- Jakarta Timur Content -->
+      <div class="tab-pane fade" id="jaktim" role="tabpanel" aria-labelledby="jaktim-tab">
+        <h3 class="my-4 text-center">Jakarta Timur</h3>
+        <div class="row">
+          <!-- List of cafes for Jakarta Timur -->
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jaktim">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 1 Jaktim</h5>
+                <p class="card-text">Jl. Example Address 1, Jakarta Timur</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jaktim">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 2 Jaktim</h5>
+                <p class="card-text">Jl. Example Address 2, Jakarta Timur</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jaktim">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 3 Jaktim</h5>
+                <p class="card-text">Jl. Example Address 3, Jakarta Timur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Jakarta Barat Content -->
+      <div class="tab-pane fade" id="jakbar" role="tabpanel" aria-labelledby="jakbar-tab">
+        <h3 class="my-4 text-center">Jakarta Barat</h3>
+        <div class="row">
+          <!-- List of cafes for Jakarta Barat -->
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jakbar">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 1 Jakbar</h5>
+                <p class="card-text">Jl. Example Address 1, Jakarta Barat</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jakbar">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 2 Jakbar</h5>
+                <p class="card-text">Jl. Example Address 2, Jakarta Barat</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jakbar">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 3 Jakbar</h5>
+                <p class="card-text">Jl. Example Address 3, Jakarta Barat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jakarta Utara Content -->
+      <div class="tab-pane fade" id="jakut" role="tabpanel" aria-labelledby="jakut-tab">
+        <h3 class="my-4 text-center">Jakarta Utara</h3>
+        <div class="row">
+          <!-- List of cafes for Jakarta Utara -->
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 1 Jakut">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 1 Jakut</h5>
+                <p class="card-text">Jl. Example Address 1, Jakarta Utara</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 2 Jakut">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 2 Jakut</h5>
+                <p class="card-text">Jl. Example Address 2, Jakarta Utara</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 text-center">
+              <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cafe 3 Jakut">
+              <div class="card-body">
+                <h5 class="card-title">Cafe 3 Jakut</h5>
+                <p class="card-text">Jl. Example Address 3, Jakarta Utara</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

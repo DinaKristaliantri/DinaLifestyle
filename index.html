@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lifestyle Scena Culture</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+    <style>
+        /* Set background color to a gray cement-like color */
+        body {
+            background-color: #696969; /* Light gray color */
+        }
+    </style>
+</head>
+
+<style>
+      /* Custom styles for the intro and features section */
+      .intro {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centering the feature boxes */
+        gap: 20px; /* Space between boxes */
+        margin: 20px 0;
+      }
+      .feature-box {
+        background-color: #1e3a8a; /* Light background for contrast */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        width: 200px; /* Set a fixed width for boxes */
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .feature-box:hover {
+        background-color: #e2e6ea; /* Change background on hover */
+        transform: translateY(-5px); /* Lift effect on hover */
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #1e3a8a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 10px 0; /* Space above and below buttons */
+      }
+      .btn:hover {
+        background-color: #1e40af;
+      }
+      .grid-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+      }
+      .grid-scroll article {
+        min-width: 300px; /* Menyesuaikan ukuran minimal kotak artikel */
+        flex: 0 0 auto;   /* Menghindari penyusutan elemen artikel */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>Scena CuLture</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sipspotssnap.html">Sip Spots & Snap</a></li>
+        <li><a href="#">Masterclasses</a></li>
+        <li><a href="#" role="button">Subscribe</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- Main Section -->
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <h2>Enjoy to the Lifestyle Hub</h2>
+            <h3>Explore trends, and living your best life</h3>
+          </hgroup>
+          <p>
+            Lifestyle is all about finding balance, embracing health, and living
+            in the moment. Whether you're into fitness, mindfulness, or just
+            looking to elevate your daily routines, you've come to the right
+            place.
+          </p>
+          
+          <figure>
+            <img
+              src="assets/home.jpg"
+            />
+        </section>
+      </div>
+    </main>
+
+<!-- Main content -->
+    <main class="container">
+      <!-- Intro Section -->
+      <section class="intro">
+        <h1>Welcome to Scena CuLture</h1>
+        <p>Find your favorite coffee spots and capture the moment. Explore cafes that inspire you to enjoy every sip.</p>
+        <a href="sipspotssnap.html" class="btn">Explore Sip Spots & Snap</a>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <a href="sipspotssnap.html">
+          <div class="feature-box">
+            <h3>Sip Spots & Snap</h3>
+            <p>Discover the most aesthetic cafes for your next photo op.</p>
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="feature-box">
+            <h3>Masterclasses</h3>
+            <p>Join our classes to elevate your coffee knowledge.</p>
+          </div>
+        </a>
+
+      </section>
+    </main>
+
+<!-- Brews & Views Blog Section -->
+<section class="container my-5">
+  <h2>Brews & Views - Lifestyle Blog</h2>
+  <p>Tips, stories, and guides on enjoying coffee as part of your lifestyle.</p>
+  <div class="grid-scroll">
+    <article class="col-md-4 mb-4">
+      <img src="assets/artikel1.jpg" alt="Coffee and Health" class="img-fluid" />
+      <h3>Coffee and Health</h3>
+      <p>Discussing the health benefits of coffee, including antioxidants and its influence on mood and productivity.</p>
+      <a href="https://www.gramedia.com/best-seller/manfaat-kopi-untuk-kesehatan/" class="btn btn-primary">Read More</a>
+    </article>
+    <article class="col-md-4 mb-4">
+      <img src="assets/artikel2.jpg" alt="Story Behind Coffee" class="img-fluid" />
+      <h3>The Story Behind Coffee</h3>
+      <p>The origins of coffee, the history of certain varieties, and the stories of coffee farmers or local producers supporting sustainability.</p>
+      <a href="https://www.sasamecoffee.com/kopipedia/sejarah-dan-jenis-kopi/" class="btn btn-primary">Read More</a>
+    </article>
+    <article class="col-md-4 mb-4">
+      <img src="assets/artikel3.jpg" alt="Current Coffee Trends" class="img-fluid" />
+      <h3>Current Coffee Trends</h3>
+      <p>Reviewing the latest trends in the coffee world, such as nitro coffee, infused coffee, or innovative brewing methods.</p>
+      <a href="https://idebiz.id/tren-terkini-di-dunia-barista-profesional-dan-kopi/" class="btn btn-primary">Read More</a>
+    </article>
+  </div>
+</section>
+
+
+
+    <!-- Subscribe Section -->
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <hgroup>
+            <h2>Join Our Community</h2>
+            <h3>Subscribe for the latest lifestyle updates</h3>
+          </hgroup>
+          <form class="grid">
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="First Name"
+              aria-label="First Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              aria-label="Email"
+              required
+            />
+            <button type="submit" onclick="event.preventDefault()">
+              Subscribe
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+      <small>
+        <a href="#">Privacy Policy</a> •
+        <a href="#">Terms & Conditions</a>
+      </small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
